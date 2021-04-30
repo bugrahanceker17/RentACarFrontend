@@ -1,4 +1,7 @@
+<br><br>
 <h3>Markalar</h3>
 <ul class="list-group">
-  <li *ngFor="let brand of brands" class="list-group-item list-group-item-action">{{brand.name}}</li>
+  <button routerLink="/cars/" type="button" class="btn btn-primary">Tüm Markalar</button>
+  <button (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" type="button" routerLink="/cars/brand/{{brand.id}}"
+    class="btn btn-warning">{{brand.name}}</button>
 </ul>

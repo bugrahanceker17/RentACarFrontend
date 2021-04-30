@@ -1,1 +1,8 @@
-<p>color works!</p>
+<br><br>
+<h3>RENKLER</h3>
+<ul class="list-group">
+  <button routerLink="/cars/" type="button" class="btn btn-primary">Tüm Renkler</button>
+    <button (click)="setCurrentColor(color)" *ngFor="let color of colors" type="button" routerLink="/cars/color/{{color.id}}"
+    class="btn btn-danger">{{color.name}}</button>
+  </ul>
+  <h5 *ngIf="currentColor">{{currentColor.name}}</h5>

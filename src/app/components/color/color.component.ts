@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Color } from 'src/app/models/color';
+import { ColorService } from 'src/app/services/color.service';
 
 @Component({
   selector: 'app-color',
@@ -7,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorComponent implements OnInit {
 
-  constructor() { }
+  colors: Color[] = [];
+  currentColor: Color = { id: 0, name: "" };
+
+  constructor(private colorService: ColorService) { }
 
   ngOnInit(): void {
+    this.getColors();
+  }
+
+  getColors() {
+    this.colorService.getColors().subscribe((response) => {
+      this.colors = response.data;
+    });
+  }
+
+  setCurrentColor(color: Color) {
+    this.currentColor = color;
+  }
+
+  getCurrentBrandClass(color: Color) {
+    if (color == this.currentColor) {
+      return "btn btn-warning"
+    }
+    else {
+      return "btn btn-danger"
+    }
   }
 
 }

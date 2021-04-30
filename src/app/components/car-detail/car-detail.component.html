@@ -2,15 +2,21 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Car Name</th>
-            <th>Color Name</th>
-            <th>Brand Name</th>
+            <th>Araba</th>
+            <th>Renk</th>
+            <th>Marka</th>
+            <th>Günlük Fiyat</th>
+            <th>Model</th>
+            <th>Açıklama</th>
         </tr>
     </thead>
     <tr *ngFor="let carDetail of carDetails">
         <td>{{carDetail.id}}</td>
         <td>{{carDetail.carName}}</td>
-        <td>{{carDetail.colorName}}</td>
         <td>{{carDetail.brandName}}</td>
+        <td>{{carDetail.colorName}}</td>
+        <td>{{carDetail.dailyPrice}} ₺</td>
+        <td>{{carDetail.modelYear}}</td>
+        <td>{{carDetail.description}}</td>
     </tr>
 </table>

@@ -1,6 +1,11 @@
 export interface CarDetail{
     id:number,
     carName:string,
+    brandId:number,
+    brandName:string,
+    colorId:number,
     colorName:string,
-    brandName:string
+    dailyPrice:number,
+    modelYear:string,
+    description:string
 }
